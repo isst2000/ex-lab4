@@ -1,8 +1,9 @@
-# Здесь необходимо реализовать
-# контекстный менеджер timer
-# Он не принимает аргументов, после выполнения блока он должен вывести время выполнения в секундах
-# Пример использования
-# with timer():
-#   sleep(5.5)
-#
-# После завершения блока должно вывестись в консоль примерно 5.5
+import time
+
+
+class timer:
+    def __enter__(self):
+        begin_time = time.clock()
+
+    def __exit__(self, type, value, traceback):
+        print('Block has been executed during {:g} s'.format(time.clock()))
